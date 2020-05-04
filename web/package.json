@@ -1,0 +1,40 @@
+{
+  "name": "field-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "eslint --fix --ext .js,.vue src",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@qxintech/qx-component": "^1.0.2",
+    "@qxintech/qx-ui": "0.0.7",
+    "axios": "^0.18.0",
+    "core-js": "^2.6.11",
+    "element-ui": "^2.13.0",
+    "qs": "latest",
+    "vue": "^2.6.11",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-plugin-unit-jest": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-element-ui": "^1.1.4",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

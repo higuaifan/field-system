@@ -1,0 +1,11 @@
+coverage:
+  stage: test
+  script:
+    - cnpm i
+    - npm run test
+  artifacts:
+    paths:
+      - coverage/lcov-report/
+  tags:
+    - vue-coverage
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
