@@ -26,7 +26,7 @@
       </qx-table>
     </div>
     <el-drawer title="新增模块" :visible.sync="newDrawerVisible" :before-close="closeNewDrawer">
-      <new-modules v-if="newDrawerVisible"/>
+      <new-modules v-if="newDrawerVisible" @close="closeNewDrawer"/>
     </el-drawer>
   </div>
 </template>
@@ -34,7 +34,7 @@
 <script>
   /**
    * @description 模块页面
-   * @author: 菩萨蛮
+   * @author: higuaifan
    * @date 2020/05/05 1:00 上午
    * @version V1.0.0
    */

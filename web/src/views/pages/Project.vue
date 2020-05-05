@@ -25,7 +25,7 @@
       </qx-table>
     </div>
     <el-drawer title="新增系统" :visible.sync="newDrawerVisible" :before-close="closeNewDrawer">
-      <new-project v-if="newDrawerVisible"/>
+      <new-project v-if="newDrawerVisible" @close="closeNewDrawer"/>
     </el-drawer>
   </div>
 </template>
@@ -33,7 +33,7 @@
 <script>
   /**
    * @description 项目页面
-   * @author: 菩萨蛮
+   * @author: higuaifan
    * @date 2020/05/04 7:07 下午
    * @version V1.0.0
    */
