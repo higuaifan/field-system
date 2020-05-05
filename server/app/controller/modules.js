@@ -18,6 +18,12 @@ class ModulesController extends BaseController {
         ctx.body = this.successResponseData(list);
     }
 
+    async show(){
+        const { ctx } = this;
+        const list = await ctx.service.modules.show(ctx.request.ctx.params.id);
+        ctx.body = this.successResponseData(list);
+    }
+
     async create() {
         const { ctx } = this;
         const result = await ctx.service.modules.insert(ctx.request.body);

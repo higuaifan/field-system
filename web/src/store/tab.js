@@ -1,5 +1,5 @@
 /**
- @author: 菩萨蛮
+ @author: higuaifan
  @date: 2019-05-27-11:27
  @version: V1.0.0
  */
@@ -22,7 +22,8 @@ const getMenu = () => [
   m('管理', '', true, '', [
     m2('系统', 'project', true, false, false),
     m2('字段', 'fields', true, false, false),
-    m2('模块', 'modules', true, false, false)
+    m2('模块', 'modules', true, false, false),
+    m2('模块字段设置', 'modules-operator', false, false, false)
   ])
 ];
 

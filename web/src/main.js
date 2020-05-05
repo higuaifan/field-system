@@ -11,6 +11,8 @@ import './assets/icon/iconfont.css';
 import Search from './components/common/search/Search';
 import ProjectAutoComplete from './components/autoComplete/ProjectAutoComplete';
 import ModulesAutoComplete from './components/autoComplete/ModulesAutoComplete';
+import FieldsAutoComplete from './components/autoComplete/FieldsAutoComplete';
+import ModuleFieldsAutoComplete from './components/autoComplete/ModuleFieldsAutoComplete';
 
 
 Vue.use(ElementUI);
@@ -25,6 +27,18 @@ router.beforeEach((to, from, next) => {
 });
 Vue.prototype.math = qxMath;
 Vue.prototype.utils = qxUtils;
+Vue.prototype.utils.objToHump = obj => {
+  // eslint-disable-next-line no-useless-escape
+  const toHump = name => name.replace(/\_(\w)/g, (all, letter) => letter.toUpperCase());
+  const humpObj = {};
+  Object.keys(obj).map(k => {
+    if (obj[k] !== '') {
+      humpObj[toHump(k)] = obj[k];
+    }
+    return null;
+  });
+  return humpObj;
+};
 new Vue({
   router,
   store,
@@ -33,3 +47,5 @@ new Vue({
 Vue.component('Search', Search);
 Vue.component('ProjectAutoComplete', ProjectAutoComplete);
 Vue.component('ModulesAutoComplete', ModulesAutoComplete);
+Vue.component('FieldsAutoComplete', FieldsAutoComplete);
+Vue.component('ModuleFieldsAutoComplete', ModuleFieldsAutoComplete);

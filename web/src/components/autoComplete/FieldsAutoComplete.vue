@@ -4,26 +4,27 @@
                     :fetch-suggestions="supplierSearch"
                     :orderDefaultValue="defaultValue"
                     @select="selectItem"
-                    value-key="module_name"
-                    placeholder="请选择模块"/>
+                    :value-key="itemName"
+                    placeholder="请选择字段"/>
 </template>
 
 <script>
   /**
-   * @description 模块自动查询组件
-   * @author: higuaifan
-   * @date 2020/5/5 2:28 上午
+   * @description 字段自动搜索组件
+   * @author higuaifan
+   * @date 2020/5/5 16:12
    * @version V1.0.0
    */
+
   import AutoComplete from '../../../mixins/common/AutoComplete';
 
   export default {
-    name: 'ModulesAutoComplete',
+    name: 'FieldsAutoComplete',
     mixins: [AutoComplete],
     data() {
       return {
-        url: '/api/modules/like?moduleName=',
-        itemName: 'module_name'
+        url: '/api/fields/like?fieldName=',
+        itemName: 'field_name'
       };
     }
   };

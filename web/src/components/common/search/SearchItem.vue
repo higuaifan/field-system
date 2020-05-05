@@ -19,7 +19,7 @@
 
 <script>/**
  * @description 查询输入组件
- * @author: 菩萨蛮
+ * @author: higuaifan
  * @date 2020/2/12 9:24 下午
  * @version V1.0.0
  *

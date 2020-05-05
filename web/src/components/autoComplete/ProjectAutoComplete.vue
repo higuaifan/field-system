@@ -11,7 +11,7 @@
 <script>
   /**
    * @description 系统自动查询组件
-   * @author: 菩萨蛮
+   * @author: higuaifan
    * @date 2020/5/5 2:07 上午
    * @version V1.0.0
    */

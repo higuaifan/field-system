@@ -18,6 +18,7 @@
               <template slot-scope="scope">
                 <div class="table-operator">
                   <i class="el-icon-third-shanchu" @click="remove(scope.row)"/>
+                  <i class="el-icon-edit-outline" @click="setFields(scope.row)"/>
                 </div>
               </template>
             </el-table-column>
@@ -54,6 +55,11 @@
           search: []
         }
       };
+    },
+    methods: {
+      setFields(row) {
+        this.$router.push(`/modules-operator/${row.id}`);
+      }
     }
   };
 </script>

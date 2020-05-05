@@ -20,7 +20,11 @@ export default new Router({
         { path: '/index', component: () => import('./views/Index.vue') },
         { path: '/project', component: () => import('./views/pages/Project.vue') },
         { path: '/fields', component: () => import('./views/pages/Fields.vue') },
-        { path: '/modules', component: () => import('./views/pages/Modules.vue') }
+        { path: '/modules', component: () => import('./views/pages/Modules.vue') },
+        {
+          path: '/modules-operator/:id',
+          component: () => import('./views/pages/operator/ModulesOperator.vue')
+        }
         ]
     }
   ]

@@ -8,9 +8,11 @@ const BaseService = require('./BaseService')
 
 class ModulesService extends BaseService {
     async index(where) {
-        return this.app.mysql.select('modules', {
-            where: this.objectToLine(where)
-        });
+        return this.app.mysql.select('modules', { where: this.objectToLine(where) });
+    }
+
+    async show(id) {
+        return this.app.mysql.select('modules', { where: { id } });
     }
 
     async like(where) {

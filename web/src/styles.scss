@@ -812,3 +812,9 @@ body {
   border-bottom: 1px solid #E6EAEE;
   padding: 0 8px;
 }
+
+.drawer-form {
+  .el-input {
+    width: 200px;
+  }
+}

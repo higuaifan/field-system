@@ -1,6 +1,6 @@
 /**
  * @description 查询对象类
- * @author: 菩萨蛮
+ * @author: higuaifan
  * @date 2020/2/12 9:11 下午
  * @version V1.0.0
  *

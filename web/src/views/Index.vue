@@ -7,7 +7,7 @@
 <script>
   /**
    * @description 首页
-   * @author: 菩萨蛮
+   * @author: higuaifan
    * @date 2019/12/3 10:17 上午
    * @version V1.0.0
    *

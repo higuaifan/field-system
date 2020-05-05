@@ -8,8 +8,13 @@ const BaseService = require('./BaseService')
 const ServiceBizError = require('../../error/ServiceBizError')
 
 class FieldsService extends BaseService {
-    async index() {
-        return this.app.mysql.select('fields');
+    async index(where) {
+        return this.app.mysql.select('fields', { where: this.objectToLine(where) });
+    }
+
+    async like(where) {
+        return this.app.mysql
+            .query(`select * from fields where field_name like \'%${where.fieldName}%\'`);
     }
 
     async read(where) {

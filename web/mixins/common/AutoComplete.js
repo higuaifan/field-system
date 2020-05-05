@@ -1,6 +1,6 @@
 /**
  * @description 自动查询方法混入
- * @author: 菩萨蛮
+ * @author: higuaifan
  * @date 2020/4/16 5:59 下午
  * @version V1.0.0
  *

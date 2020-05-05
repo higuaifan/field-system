@@ -1,6 +1,6 @@
 /**
  * @description 订单信息store
- * @author: 菩萨蛮
+ * @author: higuaifan
  * @date 2019/12/2 4:28 下午
  * @version V1.0.0
  *
