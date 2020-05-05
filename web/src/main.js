@@ -13,7 +13,7 @@ import ProjectAutoComplete from './components/autoComplete/ProjectAutoComplete';
 import ModulesAutoComplete from './components/autoComplete/ModulesAutoComplete';
 import FieldsAutoComplete from './components/autoComplete/FieldsAutoComplete';
 import ModuleFieldsAutoComplete from './components/autoComplete/ModuleFieldsAutoComplete';
-
+import echarts from 'echarts';
 
 Vue.use(ElementUI);
 Vue.use(qxUI);
@@ -25,6 +25,7 @@ router.beforeEach((to, from, next) => {
   }
   next();
 });
+Vue.prototype.$echarts = echarts;
 Vue.prototype.math = qxMath;
 Vue.prototype.utils = qxUtils;
 Vue.prototype.utils.objToHump = obj => {

@@ -13,6 +13,7 @@
     "@qxintech/qx-ui": "0.0.7",
     "axios": "^0.18.0",
     "core-js": "^2.6.11",
+    "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
     "qs": "latest",
     "vue": "^2.6.11",

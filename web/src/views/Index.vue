@@ -1,6 +1,6 @@
 <template>
-  <div class="index-img">
-    <h1>hi</h1>
+  <div class="new-order">
+    <div id="myChart" :style="{width: '100%', height: '100%'}"></div>
   </div>
 </template>
 
@@ -15,7 +15,51 @@
    */
 
   export default {
-    name: 'Index'
+    name: 'Index',
+    async created() {
+      const response = await this.qGet('/api/echarts');
+      const { data, edges } = response.data.datas;
+      this.drawLine(data, edges);
+    },
+    methods: {
+      drawLine(data, edges) {
+        // 基于准备好的dom，初始化echarts实例
+        const myChart = this.$echarts.init(document.getElementById('myChart'));
+        myChart.setOption({
+          title: { text: '字段图表' },
+          animationDurationUpdate: 1500,
+          animationEasingUpdate: 'quinticInOut',
+          series: [
+            {
+              type: 'graph',
+              layout: 'force',
+              data,
+              edges,
+              force: {
+                repulsion: 150,
+                edgeLength: 105,
+                gravity: 0.01
+              },
+              roam: true,
+              focusNodeAdjacencyOn: true,
+              draggable: true,
+              emphasis: {
+                label: {
+                  position: 'right',
+                  show: true
+                }
+              },
+              focusNodeAdjacency: true,
+              lineStyle: {
+                width: 0.5,
+                curveness: 0.3,
+                opacity: 0.7
+              }
+            }
+          ]
+        });
+      }
+    }
   };
 </script>
 

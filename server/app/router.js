@@ -4,6 +4,7 @@ module.exports = app => {
     router.get('/moduleFields/like', controller.moduleFields.like);
     router.get('/project/like', controller.project.like);
     router.get('/fields/like', controller.fields.like);
+    router.get('/echarts', controller.echarts.index);
     router.resources('project', '/project', controller.project);
     router.resources('modules', '/modules', controller.modules);
     router.resources('fields', '/fields', controller.fields);
