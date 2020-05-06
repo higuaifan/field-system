@@ -9,41 +9,52 @@ class EchartsService extends BaseService {
     async index() {
 
         const modulesList = await this.app.mysql.query('select module_name as name from modules');
-        const fieldNameList = await this.app.mysql.query('select field_name as name from fields');
+        const fieldList = await this.app.mysql.query('select field_name as name from fields');
+        const moduleFieldsList = await this.app.mysql.query('select module_name,field_name from module_fields');
+        const fieldCorrelationList = await this.app.mysql.query('select module_a_name,module_fields_name_a,module_b_name,module_fields_name_b from fields_correlation');
 
         const data = [
             ...modulesList.map(e => ({
                 name: e.name,
                 symbolSize: 60
             })),
-            ...fieldNameList.map(e => ({
+            ...fieldList.map(e => ({
                 name: e.name,
                 symbolSize: 20,
                 itemStyle: {
                     color: 'rgb(128, 128, 128)'
                 }
             })),
-        ]
-
-        const systemEdgeList = await this.app.mysql.query('select f.field_name as \'source\',m.module_name as \'target\' from module_fields_view f,modules m where f.module_id = m.id');
-        const fieldsEdgeList = await this.app.mysql.query('select f.field_name as \'source\',m.field_name as \'target\' from fields_correlation_view f,module_fields_view m where f.module_fields_id_a = m.id');
-
-        const edges = [
-            ...systemEdgeList.map(e=>({
-                ...e,
-                lineStyle:{
-                    color:'#f86d62',
-                    width:'3'
+            ...moduleFieldsList.map(e => ({
+                name: `${e.module_name}-${e.field_name}`,
+                symbolSize: 40,
+                itemStyle: {
+                    color: '#5000b8'
                 }
             })),
-            ...fieldsEdgeList.map(e=>({
+        ];
+
+
+        const fieldsList = moduleFieldsList.map(e => [{ source: e.module_name, target: `${e.module_name}-${e.field_name}` },
+            { source: `${e.module_name}-${e.field_name}`, target: e.field_name }]).flat();
+
+        const edges = [
+            ...fieldsList.map(e => ({
                 ...e,
-                lineStyle:{
-                    color:'#8db600',
-                    width:'1'
+                lineStyle: {
+                    color: '#2b97a4',
+                    width: '3'
+                }
+            })),
+            ...fieldCorrelationList.map(e=>({
+                source:`${e.module_a_name}-${e.module_fields_name_a}`,
+                target:`${e.module_b_name}-${e.module_fields_name_b}`,
+                lineStyle: {
+                    color: '#f2c1bd',
+                    width: '3'
                 }
             }))
-        ]
+        ];
 
         return { data, edges };
     }

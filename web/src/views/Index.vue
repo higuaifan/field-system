@@ -26,7 +26,7 @@
         // 基于准备好的dom，初始化echarts实例
         const myChart = this.$echarts.init(document.getElementById('myChart'));
         myChart.setOption({
-          title: { text: '字段图表' },
+          title: { text: '字段关联图' },
           animationDurationUpdate: 1500,
           animationEasingUpdate: 'quinticInOut',
           series: [
@@ -37,11 +37,11 @@
               edges,
               force: {
                 repulsion: 150,
-                edgeLength: 105,
+                edgeLength: [50, 105],
                 gravity: 0.01
               },
               roam: true,
-              focusNodeAdjacencyOn: true,
+              focusNodeAdjacency: true,
               draggable: true,
               emphasis: {
                 label: {
@@ -49,7 +49,6 @@
                   show: true
                 }
               },
-              focusNodeAdjacency: true,
               lineStyle: {
                 width: 0.5,
                 curveness: 0.3,
