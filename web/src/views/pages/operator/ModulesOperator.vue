@@ -101,6 +101,7 @@
 
         this.fieldsData.push({
           moduleId: this.moduleObj.id,
+          moduleName: this.moduleObj.module_name,
           fieldId: item.id,
           fieldName: item.field_name,
           description: item.description,

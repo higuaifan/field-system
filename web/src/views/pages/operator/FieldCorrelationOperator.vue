@@ -86,7 +86,11 @@
           url: '/api/fieldsCorrelation',
           data: {
             moduleFieldsIdA: this.field.id,
+            moduleFieldsNameA: this.field.fieldName,
+            moduleAName: this.field.moduleName,
             moduleFieldsIdB: item.id,
+            moduleFieldsNameB: item.field_name,
+            moduleBName: this.moduleName,
             direction: this.direction
           }
         });
