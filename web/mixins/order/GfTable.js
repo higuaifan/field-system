@@ -8,10 +8,10 @@
  */
 
 
-const qxTable = {
+const gfTable = {
   data() {
     return {
-      qxTable: {
+      gfTable: {
         url: '',
         table: [],
         updateFlag: 0,
@@ -27,32 +27,32 @@ const qxTable = {
      * @param data 新的table
      */
     updateTable(data) {
-      this.qxTable.table = data.table;
+      this.gfTable.table = data.table;
     },
     tableFlagAdd() {
-      this.qxTable.updateFlag = this.qxTable.updateFlag + 1;
+      this.gfTable.updateFlag = this.gfTable.updateFlag + 1;
     },
     async handleClick() {
       this.tableFlagAdd();
     },
     /**
-     * 用于简单重置qxTable searchObj的方法，后续可以考虑封装进去
+     * 用于简单重置gfTable searchObj的方法，后续可以考虑封装进去
      * @returns {{}}
      */
     defaultSearchObj() {
       return {};
     },
     reSearch(tags) {
-      this.qxTable.searchObj = this.defaultSearchObj();
+      this.gfTable.searchObj = this.defaultSearchObj();
       tags.map(tag => {
-        this.qxTable.searchObj[tag.param] = tag.value;
+        this.gfTable.searchObj[tag.param] = tag.value;
         return true;
       });
       this.tableFlagAdd();
     },
     async deleteOrderFunc(row) {
       const deleteStr = `确定删除${row.id}吗？`;
-      const { code } = await this.qDelete(`${this.qxTable.url}/${row.id}`, deleteStr, '取消删除');
+      const { code } = await this.qDelete(`${this.gfTable.url}/${row.id}`, deleteStr, '取消删除');
       if (code === 200) {
         this.$message.success('删除成功！');
         this.tableFlagAdd();
@@ -71,4 +71,4 @@ const qxTable = {
 
 };
 
-export default qxTable;
+export default gfTable;

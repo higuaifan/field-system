@@ -7,7 +7,7 @@
     </div>
     <el-divider/>
     <div>
-      <qx-select-table :data="fieldsData">
+      <gf-select-table :data="fieldsData">
         <el-table-column prop="fieldName" label="字段名称">
           <template slot-scope="scope">
             <fields-auto-complete v-if="scope.row.isNew"
@@ -20,7 +20,7 @@
         </el-table-column>
         <el-table-column prop="fieldId" label="字段id"/>
         <el-table-column prop="description" label="字段描述"/>
-        <qx-select-table-column prop="content" label="字段内容"/>
+        <gf-select-table-column prop="content" label="字段内容"/>
         <el-table-column label="操作" fixed="right" width="100px">
           <template slot-scope="scope">
             <div class="table-operator" v-if="!scope.row.isNew">
@@ -29,7 +29,7 @@
             </div>
           </template>
         </el-table-column>
-      </qx-select-table>
+      </gf-select-table>
     </div>
     <el-dialog :title="`${fieldCorrelationOperator.field.fieldName}字段关联编辑`"
                :visible.sync="fieldCorrelationOperator.visible">

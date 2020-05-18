@@ -9,12 +9,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@qxintech/qx-component": "^1.0.2",
-    "@qxintech/qx-ui": "0.0.7",
+    "@higuaifan/gf-component": "^1.0.0",
     "axios": "^0.18.0",
     "core-js": "^2.6.11",
     "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
+    "mathjs": "^7.0.0",
     "qs": "latest",
     "vue": "^2.6.11",
     "vue-router": "^3.0.3",

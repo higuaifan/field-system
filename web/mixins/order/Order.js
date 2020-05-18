@@ -18,7 +18,7 @@ const order = {
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (vm.$store.state.tab.update === true) {
-        vm.qxTable.updateFlag++;
+        vm.gfTable.updateFlag++;
         vm.$store.commit('tab/afterUpdate');
       }
     });

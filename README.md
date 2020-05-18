@@ -6,10 +6,13 @@
 
 ## 前端
 
-vue全家桶 + element-ui + qx-component（公司系统库，后续改版将会迭代掉）+ echarts
+vue全家桶 + element-ui + gf-component + echarts
 
 ## 后端
 
 egg
 
 
+## TODO
+
+1. 优化数据库的结构，视图是拿来玩玩的，后续还是宽表解决问题

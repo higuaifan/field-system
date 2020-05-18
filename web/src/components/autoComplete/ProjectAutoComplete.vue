@@ -1,5 +1,5 @@
 <template>
-  <qx-auto-complete v-model="supplierValue"
+  <gf-auto-complete v-model="supplierValue"
                     :disabled="disabled"
                     :fetch-suggestions="supplierSearch"
                     :orderDefaultValue="defaultValue"

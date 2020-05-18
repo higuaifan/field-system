@@ -188,7 +188,7 @@ Plugin.install = V => {
   V.prototype.qDelete = qDelete;
   V.prototype.qPost = qPost;
   V.prototype.qPut = qPut;
-  V.prototype.qxAxios = axiosConfig;
+  V.prototype.gfAxios = axiosConfig;
 };
 
 Vue.use(Plugin);

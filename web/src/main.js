@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import './plugins/axios';
-import qxUI from '@qxintech/qx-ui';
-import { qxMath, qxUtils, qxComponent } from '@qxintech/qx-component';
+import echarts from 'echarts';
+import { gfMath, gfUtils, gfComponent } from '@higuaifan/gf-component';
 import App from './App.vue';
 import router from './router';
 import store from './store/store';
@@ -13,11 +13,9 @@ import ProjectAutoComplete from './components/autoComplete/ProjectAutoComplete';
 import ModulesAutoComplete from './components/autoComplete/ModulesAutoComplete';
 import FieldsAutoComplete from './components/autoComplete/FieldsAutoComplete';
 import ModuleFieldsAutoComplete from './components/autoComplete/ModuleFieldsAutoComplete';
-import echarts from 'echarts';
 
 Vue.use(ElementUI);
-Vue.use(qxUI);
-Vue.use(qxComponent);
+Vue.use(gfComponent);
 router.beforeEach((to, from, next) => {
   const component = to.path.split('/')[1];
   if (!(component.includes('check') && component.split('-')[0] === 'check')) {
@@ -26,8 +24,8 @@ router.beforeEach((to, from, next) => {
   next();
 });
 Vue.prototype.$echarts = echarts;
-Vue.prototype.math = qxMath;
-Vue.prototype.utils = qxUtils;
+Vue.prototype.math = gfMath;
+Vue.prototype.utils = gfUtils;
 Vue.prototype.utils.objToHump = obj => {
   // eslint-disable-next-line no-useless-escape
   const toHump = name => name.replace(/\_(\w)/g, (all, letter) => letter.toUpperCase());

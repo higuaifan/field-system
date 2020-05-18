@@ -7,7 +7,7 @@
     <div class="order-table">
       <div class="order-main-header">
       </div>
-      <qx-table :qx-table="qxTable"
+      <gf-table :gf-table="gfTable"
                 @updateTable="updateTable">
         <template slot="table" slot-scope="data">
           <el-table :data="data.table" fit show-overflow-tooltip>
@@ -22,7 +22,7 @@
             </el-table-column>
           </el-table>
         </template>
-      </qx-table>
+      </gf-table>
     </div>
     <el-drawer title="新增系统" :visible.sync="newDrawerVisible" :before-close="closeNewDrawer">
       <new-project v-if="newDrawerVisible" @close="closeNewDrawer"/>
@@ -38,17 +38,17 @@
    * @version V1.0.0
    */
 
-  import QxTable from '../../../mixins/order/QxTable';
+  import GfTable from '../../../mixins/order/GfTable';
   import Order from '../../../mixins/order/Order';
   import NewProject from './new/NewProject';
 
   export default {
     name: 'Project',
-    mixins: [QxTable, Order],
+    mixins: [GfTable, Order],
     components: { NewProject },
     data() {
       return {
-        qxTable: { url: '/api/project' },
+        gfTable: { url: '/api/project' },
         order: {
           search: []
         }

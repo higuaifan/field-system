@@ -1,6 +1,6 @@
 <template>
   <div>
-    <qx-select-table :data="correlationList">
+    <gf-select-table :data="correlationList">
       <el-table-column prop="fieldId" label="模块">
         <template slot-scope="scope">
           <modules-auto-complete v-if="scope.row.isNew"
@@ -37,7 +37,7 @@
           </div>
         </template>
       </el-table-column>
-    </qx-select-table>
+    </gf-select-table>
   </div>
 </template>
 
