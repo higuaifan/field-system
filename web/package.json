@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@higuaifan/gf-component": "^1.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.11",
     "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
